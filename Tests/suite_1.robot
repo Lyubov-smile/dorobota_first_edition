@@ -41,6 +41,16 @@ Example Test Case - First Keyword with arguments
     [Tags]    smoke
     First Keyword with arguments    arg1_value    arg2_value
 
+Example Test Case - First Keyword with default value
+    [Documentation]    This is the first test case.
+    [Tags]    smoke
+    # parametr arg1 przyjmie wartosc args1_value
+    First Keyword with one default arguments    arg1_value
+    # parametr arg1 przyjmie wartosc args1_value, a parametr arg2 przyjmie wartosc arg2_value
+    First Keyword with one default arguments    arg1_value    arg2_value
+    First Keyword with one default arguments    arg1_value    arg2=arg2_value
+    First Keyword with three arguments and two default arguments    arg1_value    arg3=arg3_value
+
 Example Test Case - Create Variables in Robot Framework
     [Documentation]    This is the first test case.
     [Tags]    smoke
@@ -107,6 +117,22 @@ First Keyword with arguments
     [Documentation]    This is the first keyword with arguments.
     [Arguments]    ${arg1}    ${arg2}
     Log    This is the first keyword with arguments: ${arg1}, ${arg2}.
+
+First Keyword with one default arguments
+    [Documentation]    This is the first keyword with default arguments.
+    [Arguments]    ${arg1}    ${arg2}=default2
+    Log    This is the first keyword with default arguments: ${arg1}, ${arg2}.
+
+First Keyword with two default arguments
+    [Documentation]    This is the first keyword with default arguments.
+    [Arguments]    ${arg1}=default1    ${arg2}=default2
+    Log    This is the first keyword with default arguments: ${arg1}, ${arg2}.
+
+First Keyword with three arguments and two default arguments
+    [Documentation]    This is the first keyword with default arguments.
+    [Arguments]    ${arg1}    ${arg2}=default2    ${arg3}=default3
+    Log    This is the first keyword with default arguments: ${arg1}, ${arg2}, ${arg3}.
+
 
 Keyword Loop with Created List
     [Documentation]    This is a keyword with a loop.
